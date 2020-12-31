@@ -1,0 +1,88 @@
+<!DOCTYPE html>.
+<html>
+  <body background="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2018/09/forza-horizon-4_7.jpg" height="40000" width="300000" onload="startGame()">
+      <div style = "text-align:center;">
+         <canvas width="700" height="700" style = "border: 2px solid;" ></canvas>
+      </div>
+	<script>
+	 
+		 var myGamePiece;
+		 var teclap=0;
+	 
+		 function startGame() 
+		 {  
+			myGamePiece = new component(60, 60, "coche0.png", 30, 120, "image");
+		 }
+			
+			this.width = width;
+			this.height = height;
+			this.speedX = 0;
+			this.speedY = 0;    
+			this.x = x;
+			this.y = y;  
+			
+			function moveup() {
+				myGamePiece.speedY = -5; 
+				
+			}
+
+			function movedown() {
+				myGamePiece.speedY = 5;
+				
+
+			}
+
+
+			function clearmove() {
+				myGamePiece.speedX = 0; 
+				myGamePiece.speedY = 0; 
+			}
+
+			document.onkeydown=function(event)
+			{
+				if (event==null)
+					teclap=window.event.keyCode;
+				else	
+				
+					teclap=event.keyCode;
+
+				switch(teclap)
+				{
+					case 40://abajo
+						movedown();
+					break;
+					case 38://arriba
+						moveup();
+					break;
+					
+					default:
+					break;
+				}
+
+			}
+			document.onkeyup=function(event)
+			{
+				if (event==null)
+					teclap=window.event.keyCode;
+				else	
+				
+					teclap=event.keyCode;
+
+				switch(teclap)
+				{
+					case 40://abajo
+						clearmove();
+					break;
+					case 38://arriba
+						clearmove();
+					break;
+					default:
+					break;
+				}
+
+			}
+	 
+	 
+	</script>
+   </body>
+</html>
